@@ -70,3 +70,4 @@ if __name__ == '__main__':
     usuarios = UsuarioDAO.seleccionar()
     for usuario in usuarios:
         log.debug(usuario)
+        print(hola)
