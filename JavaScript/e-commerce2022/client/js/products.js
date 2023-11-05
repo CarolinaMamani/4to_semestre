@@ -4,14 +4,14 @@ const productos = [
         productName: 'Lapices',
         price: 480,
         quanty: 1,
-        img: "/client/media/lapices.png",
+        img: "/JavaScript/e-commerce2022/client/media/lapices.png",
     },
     {
         id: 2,
         productName: 'Cuaderno Doble',
         price: 950,
         quanty: 1,
-        img: "/client/media/cuadernoDoble.png",
+        img: "/JavaScript/e-commerce2022/client/media/cuadernoDoble.png",
     },
 
     {
@@ -20,7 +20,7 @@ const productos = [
         productName: 'Dos Mochilas',
         price: 750,
         quanty: 2,
-        img: "/client/media/dosMochi.png"
+        img: "/JavaScript/e-commerce2022/client/media/dosMochi.png"
     },
 
     {
@@ -28,6 +28,6 @@ const productos = [
         productName: 'Libros',
         price: 5000,
         quanty: 5,
-        img: "/client/media/libros.png"
+        img: "/JavaScript/e-commerce2022/client/media/libros.png"
     }
 ]

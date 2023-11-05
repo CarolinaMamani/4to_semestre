@@ -5,7 +5,7 @@ const cartBtn = document.getElementById("cart-btn");
 const cartCounter = document.getElementById("cart-counter");
 
 const displayCart = () =>{
-    modalContainer.innerHTML = "";
+    modalContainer.innerHTML = ""; //Limpia el modal para que no repita
     modalContainer.style.display = "block";
     modalOverlay.style.display = "block";
 
@@ -52,7 +52,7 @@ const displayCart = () =>{
         `; 
         modalContainer.append(modalBody);
 
-        const decrese = modalBody.querySelector(".quantity-btn-decrese");
+        const decrese = modalBody.querySelector(".quantity-btn-decrese");//boton resta de productos
         decrese.addEventListener("click", () => {
             if(product.quanty !== 1){
                  product.quanty--;
@@ -61,7 +61,7 @@ const displayCart = () =>{
             displayCartCounter();
         });
 
-        const increse = modalBody.querySelector(".quantity-btn-increse");
+        const increse = modalBody.querySelector(".quantity-btn-increse");//boton de suma de productos
         increse.addEventListener("click", () => {
                  product.quanty++;
                 displayCart();

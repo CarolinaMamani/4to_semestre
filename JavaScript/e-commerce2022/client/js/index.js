@@ -1,6 +1,8 @@
 const shopContent = document.getElementById("shopContent");
 const cart = [];//Este es nuestro carrito, un array vacio
 
+//empujamos codigo html atravez de javascript
+// ` eso es para introducir el html
 productos.forEach((product) =>{
     const content = document.createElement("div");
     content.innerHTML = ` 
@@ -16,7 +18,7 @@ productos.forEach((product) =>{
     content.append(buyButton);
 
     buyButton.addEventListener("click", () =>{
-        const repeat = cart.some((repeatProduct) => repeatProduct.id === product.id);
+        const repeat = cart.some((repeatProduct) => repeatProduct.id === product.id);//agregamos la suma de productos
 
         if(repeat){
             cart.map((prod)=> {
