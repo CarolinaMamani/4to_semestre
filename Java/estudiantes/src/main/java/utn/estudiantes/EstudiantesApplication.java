@@ -8,6 +8,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import utn.estudiantes.servicio.EstudianteServicio;
 
+import java.util.Scanner;
+
 @SpringBootApplication //notacion que es para ejecutar
 public class EstudiantesApplication implements CommandLineRunner {//la clase
 	//el implements CommandLineRunner (interface) es para ejcutar por consola el menu
@@ -31,6 +33,25 @@ public class EstudiantesApplication implements CommandLineRunner {//la clase
 	@Override
 	public void run(String... args) throws Exception {
 		logger.info(nl+"Estamos ejecutando el metodo run de Spring ..."+nl);
+		var salir = false;
+		var consola = new Scanner(System.in);
+		while(!salir){
+			mostrarMenu();
+			salir = ejecutarOpciones(consola);
+			logger.info(nl);//salto de linea
+		}//Fin ciclo while
+	}//fin metodo run
 
+	private void mostrarMenu(){
+		logger.info(nl);//salto de linea
+		logger.info("""
+				<<<<<<<<< SISTEMA DE ESTUDIANTES >>>>>>>>>
+				1.Pasar lista
+				2.Buscar
+				3.Agregar
+				4.Modificar
+				5.Eliminar
+				6.Salir
+				Tu opcion? owo  """);
 	}
 }
