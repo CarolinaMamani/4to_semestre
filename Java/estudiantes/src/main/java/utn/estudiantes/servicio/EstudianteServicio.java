@@ -22,18 +22,18 @@ public class EstudianteServicio implements IEstudianteServicio {
     }
 
     @Override
-    public Estudiantes buscarEstudiantePorId(Integer idEstudiante) {
-        Estudiantes estudiantes = estudianteRepositorio.findById(idEstudiante).orElse(null);
-        return estudiantes;
+    public Estudiantes buscarEstudiantePorId(Integer idEstudiantes) {
+        Estudiantes estudiante = estudianteRepositorio.findById(idEstudiantes).orElse(null);
+        return estudiante;
     }
 
     @Override
-    public void guardarEstudiante(Estudiantes estudiantes) {
-        estudianteRepositorio.save(estudiantes);
+    public void guardarEstudiante(Estudiantes estudiante) {
+        estudianteRepositorio.save(estudiante);
     }
 
     @Override
-    public void eliminarEstudiante(Estudiantes estudiantes) {
-        estudianteRepositorio.delete(estudiantes);
+    public void eliminarEstudiante(Estudiantes estudiante) {
+        estudianteRepositorio.delete(estudiante);
     }
 }
