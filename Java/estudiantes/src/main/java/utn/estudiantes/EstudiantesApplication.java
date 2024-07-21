@@ -45,7 +45,7 @@ public class EstudiantesApplication implements CommandLineRunner {//la clase
 	}//fin metodo run
 
 	private void mostrarMenu(){
-		logger.info(nl);//salto de linea
+		//logger.info(nl);//salto de linea
 		logger.info("""
 				<<<<<<<<< SISTEMA DE ESTUDIANTES >>>>>>>>>
 				1.Pasar lista
@@ -122,12 +122,24 @@ public class EstudiantesApplication implements CommandLineRunner {//la clase
 
 			}
 			case 5 ->{//eliminar
-
+				logger.info("<< Eliminar >>"+nl);
+				logger.info("Id de condenado: ");
+				var idEstudiante = Integer.parseInt(consola.nextLine());
+				//buscamos por le id
+				var estudiante = estudianteServicio.buscarEstudiantePorId(idEstudiante);
+				if (estudiante != null){
+					estudianteServicio.eliminarEstudiante(estudiante);
+					logger.info("RIP u _ u : "+estudiante+nl);
+				}
+				else
+					logger.info("No existe :/ "+estudiante+nl);
 			}
 			case 6 ->{
-
+				logger.info("Adios o w o ) // *explota*"+nl+nl);
+				salir = true;
 			}
+			default -> logger.info("No se quien sos "+opcion+nl);
 		}//Fin switch
 		return salir;
-	}
+	}//fin metodo de opciones
 }
