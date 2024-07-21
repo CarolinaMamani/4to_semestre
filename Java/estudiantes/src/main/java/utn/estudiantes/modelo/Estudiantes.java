@@ -17,13 +17,13 @@ import lombok.ToString;
 @AllArgsConstructor //constructor con todos los argumentos (id nombre apellido tel email)
 @ToString //metodo to String
 
-public class Estudiante {
+public class Estudiantes {
     //agregamos los atributos
 
     //Llave primaria es: idestudiantes
     @Id //es para que agregue el numero de la llave primaria
     @GeneratedValue(strategy = GenerationType.IDENTITY) //para llaves autoincreventables
-    private Integer idEstudiante;
+    private Integer idestudiantes;
     private String nombre;
     private String apellido;
     private String telefono;
