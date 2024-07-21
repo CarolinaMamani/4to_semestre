@@ -54,7 +54,7 @@ public class EstudiantesApplication implements CommandLineRunner {//la clase
 				4.Modificar
 				5.Eliminar
 				6.Salir
-				Tu opcion? owo  """);
+				Tu opcion? owo: """);
 	}//fin metodo mostrarMenu
 
 	private boolean ejecutarOpciones(Scanner consola){
@@ -62,11 +62,47 @@ public class EstudiantesApplication implements CommandLineRunner {//la clase
 		var salir = false;
 		switch (opcion){
 			case 1 ->{
-				logger.info(nl+"Listado:"+nl);
+				logger.info(nl+"<< Listado >>"+nl);
 				List<Estudiantes> estudiantes = estudianteServicio.listarEstudiantes();
 				estudiantes.forEach((estudiante -> logger.info(estudiantes.toString())));
 			}
-			case 2->{
+			case 2->{//buscar
+				logger.info("Id del estudiante: ");
+				var idEstudiante = Integer.parseInt(consola.nextLine());
+				Estudiantes estudiante = estudianteServicio.buscarEstudiantePorId(idEstudiante);
+				if (estudiante != null)
+					logger.info(" Lo encontre! es: "+estudiante+nl);
+				else
+					logger.info("No vino u_u : "+estudiante+nl);
+			}
+			case 3->{//agregar
+				logger.info("<< Registar al nuevo recluso >>"+nl);
+				logger.info("Nombre: ");
+				var nombre = consola.nextLine();
+				logger.info("Apellido: ");
+				var apellido = consola.nextLine();
+				logger.info("Telefono: ");
+				var telefono = consola.nextLine();
+				logger.info("Email: ");
+				var email = consola.nextLine();
+				//crear objeto estudiante sin id
+				var estudiante = new Estudiantes();
+				estudiante.setNombre(nombre);
+				estudiante.setApellido(apellido);
+				estudiante.setTelefono(telefono);
+				estudiante.setEmail(email);
+				estudianteServicio.guardarEstudiante(estudiante);
+				logger.info("Ya fue empaquetado e w e: "+estudiante+nl);
+
+			}
+			case 4 ->{//modificar
+				logger.info("<< Modificamos >>"+nl);
+
+			}
+			case 5 ->{//eliminar
+
+			}
+			case 6 ->{
 
 			}
 		}//Fin switch
