@@ -132,7 +132,7 @@ public class EstudiantesApplication implements CommandLineRunner {//la clase
 					logger.info("RIP u _ u : "+estudiante+nl);
 				}
 				else
-					logger.info("No existe :/ "+estudiante+nl);
+					logger.info("No existe :/ "+idEstudiante+nl);
 			}
 			case 6 ->{
 				logger.info("Adios o w o ) // *explota*"+nl+nl);
