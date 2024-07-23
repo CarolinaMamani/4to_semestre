@@ -26,9 +26,7 @@ public class LibroForm extends JFrame {
     public LibroForm(LibroServicio libroServicio){
         this.libroServicio = libroServicio;
         iniciarForma();
-        agregarButton.addActionListener(e -> {
-
-        });
+        agregarButton.addActionListener(e -> agregarLibro()); //Lambda
     }
 
     private void iniciarForma(){
@@ -43,6 +41,14 @@ public class LibroForm extends JFrame {
         int y = (tamanioPantalla.height - getHeight()/2) ;
         setLocation(x, y);
     }
+
+    private void agregarLibro(){
+        //Leer los valores del formulario
+        if (libroTexto.getText().equals("")){ //si es true que la caja esta vacia
+            mostrarMensaje("Ingresa el nombre del libro: ")
+        }
+    }
+
 
     private void createUIComponents(){
        // panel = new JPanel(new BorderLayout()); // Inicializa el panel con BorderLayout
