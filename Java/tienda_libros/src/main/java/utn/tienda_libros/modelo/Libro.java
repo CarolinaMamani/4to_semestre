@@ -20,7 +20,7 @@ public class Libro {
     @Id //llave primaria
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer idLibro;
-    String nombreLibro;
+    String nombre;
     String autor;
     Double precio;
     Integer existencias;

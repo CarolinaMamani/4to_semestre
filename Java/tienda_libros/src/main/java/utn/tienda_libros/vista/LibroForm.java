@@ -13,6 +13,10 @@ public class LibroForm extends JFrame {
     LibroServicio libroServicio;
     private JPanel panel;
     private JTable tablaLibros;
+    private JTextField libroTexto;
+    private JTextField autorTexto;
+    private JTextField precioTexto;
+    private JTextField existenciasTexto;
     private DefaultTableModel tablaModeloLibros;
 
     @Autowired
@@ -61,7 +65,7 @@ public class LibroForm extends JFrame {
             // Creamos cada registro para agregarlos a la tabla
             Object[] renglonLibro = { // El arreglo representa cada columna
                     libro.getIdLibro(),
-                    libro.getNombreLibro(),
+                    libro.getNombre(),
                     libro.getAutor(),
                     libro.getPrecio(),
                     libro.getExistencias()
