@@ -43,9 +43,25 @@ public class LibroForm extends JFrame {
         String[] cabecera = {"Id", "Libro", "Autor", "Precio", "Existencias"};
         this.tablaModeloLibros.setColumnIdentifiers(cabecera);
         //instanciar el objeto de JTable
-
         this.tablaLibros = new JTable(tablaModeloLibros);
+        listarLibros();
+    }
 
+    private void listarLibros(){
+        //Limpiar la tabla
+        tablaModeloLibros.setRowCount(0);
+        //Obtener los libros de la base de datos
+        var libros = libroServicio.listarLibros();
+        //Iteramos cada libro
+        libros.forEach((libro) -> {//Funcion Lambda
+            //Creamos cada registro para agregarlos a la tabla
+            Object [] renglonLibro = { //el arreglo representa cada columna
+                    libro.getIdLibro(),
+                    libro.getAutor(),
+                    libro.getPrecio(),
+                    libro.getExistencias()
+            };
+        } );
     }
 
 }
