@@ -15,7 +15,6 @@ public class LibroForm extends JFrame {
     private JTable tablaLibros;
     private DefaultTableModel tablaModeloLibros;
 
-
     @Autowired
     public LibroForm(LibroServicio libroServicio){
         this.libroServicio = libroServicio;
@@ -30,38 +29,45 @@ public class LibroForm extends JFrame {
         //Para obtener las dimensiones de la ventana
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension tamanioPantalla = toolkit.getScreenSize();
-        int x = (tamanioPantalla.width - getWidth()/2);
-        int y = (tamanioPantalla.height - getHeight()/2);
+        int x = (tamanioPantalla.width - getWidth()/2) ;
+        int y = (tamanioPantalla.height - getHeight()/2) ;
         setLocation(x, y);
-
     }
 
     private void createUIComponents(){
+       // panel = new JPanel(new BorderLayout()); // Inicializa el panel con BorderLayout
 
-        this.tablaModeloLibros = new DefaultTableModel(0, 5);//5 Columnas
-        //Array para las 5 columnas
+        this.tablaModeloLibros = new DefaultTableModel(0, 5); // 5 Columnas
+        // Array para las 5 columnas
         String[] cabecera = {"Id", "Libro", "Autor", "Precio", "Existencias"};
         this.tablaModeloLibros.setColumnIdentifiers(cabecera);
-        //instanciar el objeto de JTable
+        // Instanciar el objeto de JTable
         this.tablaLibros = new JTable(tablaModeloLibros);
+
+        // Agregar JTable a un JScrollPane
+        //JScrollPane scrollPane = new JScrollPane(tablaLibros);
+        //panel.add(scrollPane, BorderLayout.CENTER); // Agregar JScrollPane al panel
+
         listarLibros();
     }
 
     private void listarLibros(){
-        //Limpiar la tabla
+        // Limpiar la tabla
         tablaModeloLibros.setRowCount(0);
-        //Obtener los libros de la base de datos
+        // Obtener los libros de la base de datos
         var libros = libroServicio.listarLibros();
-        //Iteramos cada libro
-        libros.forEach((libro) -> {//Funcion Lambda
-            //Creamos cada registro para agregarlos a la tabla
-            Object [] renglonLibro = { //el arreglo representa cada columna
+        // Iteramos cada libro
+        libros.forEach((libro) ->{ // Función Lambda
+            // Creamos cada registro para agregarlos a la tabla
+            Object[] renglonLibro = { // El arreglo representa cada columna
                     libro.getIdLibro(),
+                    libro.getNombreLibro(),
                     libro.getAutor(),
                     libro.getPrecio(),
                     libro.getExistencias()
             };
-        } );
+            this.tablaModeloLibros.addRow(renglonLibro);
+        });
     }
-
 }
+
