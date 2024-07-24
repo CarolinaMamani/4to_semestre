@@ -159,7 +159,7 @@ public class LibroForm extends JFrame {
         idTexto.setVisible(false);
 
         this.tablaModeloLibros = new DefaultTableModel(0, 5){
-            @Override  //vamos a hacer que la tabla no sea editable mediante clicks para
+            @Override  //vamos a hacer que la tabla no sea editable mediante clicks para que no se modifique
             public boolean isCellEditable(int row, int column){
                 return false;
             }
