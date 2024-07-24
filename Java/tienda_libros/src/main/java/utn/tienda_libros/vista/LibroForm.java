@@ -42,6 +42,7 @@ public class LibroForm extends JFrame {
             }
         });
         modificarButton.addActionListener(e -> modificarLibro());
+        eliminarButton.addActionListener(e -> eliminarLibro());
     }
 
     private void iniciarForma(){
@@ -125,6 +126,22 @@ public class LibroForm extends JFrame {
         }
     }
 
+    private void eliminarLibro(){
+        var fila = tablaLibros.getSelectedRow();
+        if (fila != -1){ //si selecciono alguna fila es diferente a -1
+            String idLibro = tablaLibros.getModel().getValueAt(fila,0).toString();
+            var libro = new Libro();
+            libro.setIdLibro(Integer.parseInt(idLibro));
+            libroServicio.eliminarLibro(libro);
+            mostrarMensaje("El libro "+idLibro+" fue eliminado");
+            limpiarFormulario();
+            listarLibros();
+        }
+        else {
+            mostrarMensaje("No ha seleccionado ningun libro para eliminarse");
+        }
+    }
+
     private void limpiarFormulario(){
         libroTexto.setText("");//la caja queda limpia
         autorTexto.setText("");
@@ -141,10 +158,16 @@ public class LibroForm extends JFrame {
         idTexto = new JTextField("");
         idTexto.setVisible(false);
 
-        this.tablaModeloLibros = new DefaultTableModel(0, 5); // 5 Columnas
+        this.tablaModeloLibros = new DefaultTableModel(0, 5){
+            @Override  //vamos a hacer que la tabla no sea editable mediante clicks
+            public boolean isCellEditable(int row, int column){
+                return false;
+            }
+        };
         // Array para las 5 columnas
         String[] cabecera = {"Id", "Libro", "Autor", "Precio", "Existencias"};
         this.tablaModeloLibros.setColumnIdentifiers(cabecera);
+
         // Instanciar el objeto de JTable
         this.tablaLibros = new JTable(tablaModeloLibros);
 
