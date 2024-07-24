@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 
 @Component
 public class LibroForm extends JFrame {
@@ -170,6 +171,9 @@ public class LibroForm extends JFrame {
 
         // Instanciar el objeto de JTable
         this.tablaLibros = new JTable(tablaModeloLibros);
+
+        //vamos a evitar que se seleccionen varios libros
+        tablaLibros.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         listarLibros();
     }
