@@ -83,7 +83,16 @@ public class LibroForm extends JFrame {
         var fila = tablaLibros.getSelectedRow();
         if (fila != -1){
             String idLibro = tablaLibros.getModel().getValueAt(fila,0).toString();
-            String nombre = tablaLibros.getModel().getValueAt(fila,0).toString();
+            idTexto.setText(idLibro);
+            String nombre = tablaLibros.getModel().getValueAt(fila,1).toString();
+            libroTexto.setText(nombre);
+            String autor = tablaLibros.getModel().getValueAt(fila,2).toString();
+            autorTexto.setText(autor);
+            String precio = tablaLibros.getModel().getValueAt(fila,3).toString();
+            precioTexto.setText(precio);
+            String existencias = tablaLibros.getModel().getValueAt(fila,4).toString();
+            existenciasTexto.setText(existencias);
+
         }
     }
 
