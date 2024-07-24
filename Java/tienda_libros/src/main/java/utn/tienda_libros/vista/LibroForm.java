@@ -16,6 +16,7 @@ public class LibroForm extends JFrame {
     LibroServicio libroServicio;
     private JPanel panel;
     private JTable tablaLibros;
+    private JTextField idTexto;
     private JTextField libroTexto;
     private JTextField autorTexto;
     private JTextField precioTexto;
@@ -78,7 +79,12 @@ public class LibroForm extends JFrame {
     }
 
     private void cargarLibroSeleccionado(){
-
+    //los indices de las colimnas icnician en 0
+        var fila = tablaLibros.getSelectedRow();
+        if (fila != -1){
+            String idLibro = tablaLibros.getModel().getValueAt(fila,0).toString();
+            String nombre = tablaLibros.getModel().getValueAt(fila,0).toString();
+        }
     }
 
     private void limpiarFormulario(){
@@ -94,7 +100,8 @@ public class LibroForm extends JFrame {
 
 
     private void createUIComponents(){
-       // panel = new JPanel(new BorderLayout()); // Inicializa el panel con BorderLayout
+        idTexto = new JTextField("");
+        idTexto.setVisible(false);
 
         this.tablaModeloLibros = new DefaultTableModel(0, 5); // 5 Columnas
         // Array para las 5 columnas
@@ -102,10 +109,6 @@ public class LibroForm extends JFrame {
         this.tablaModeloLibros.setColumnIdentifiers(cabecera);
         // Instanciar el objeto de JTable
         this.tablaLibros = new JTable(tablaModeloLibros);
-
-        // Agregar JTable a un JScrollPane
-        //JScrollPane scrollPane = new JScrollPane(tablaLibros);
-        //panel.add(scrollPane, BorderLayout.CENTER); // Agregar JScrollPane al panel
 
         listarLibros();
     }
