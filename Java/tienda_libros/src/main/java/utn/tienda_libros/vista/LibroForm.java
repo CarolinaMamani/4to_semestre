@@ -110,6 +110,17 @@ public class LibroForm extends JFrame {
                 libroTexto.requestFocusInWindow();
                 return;
             }
+            //llenamos el objetos libro a actualizar
+            int idLibro = Integer.parseInt(idTexto.getText());
+            var nombre = libroTexto.getText();
+            var autor = autorTexto.getText();
+            var precio = Double.parseDouble(precioTexto.getText());
+            var existencias = Integer.parseInt(existenciasTexto.getText());
+            var libro = new Libro(idLibro, nombre, autor, precio, existencias);
+            libroServicio.guardarLibro(libro);
+            mostrarMensaje("Modificado con exito!");
+            limpiarFormulario();
+            listarLibros();//refesca la tabla
 
         }
     }
