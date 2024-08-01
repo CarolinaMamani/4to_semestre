@@ -9,3 +9,5 @@ El companero hizo un programa de lista de tareas, usando base de datos inteliji 
 Aun no me quedo claro.
 Es demaciado y aunque compartio todo el codigo no se si lo quiero realizar. Deberia hacer uno propio inspirado 
 Pero, el como preparo las liberias es confuso.
+Esta muy interesante, aunque siento que lo que hizo fue muuuuy complicado. Siento que podria haber sido mas simple
+Pero como no tengo conocimiento del tema no lo puedo acegurar
