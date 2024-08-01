@@ -2,3 +2,5 @@ Terminado los proyectos con el profe Ariel
 - Terminado de ver el proyecto de lista de tareas parte 1
 - Lo mismo parte 2
 - Lo mismo parte 3
+Lo de atras fue todo Backend
+- Lo mismo parte 4 final Fronted
