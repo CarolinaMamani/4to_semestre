@@ -4,3 +4,8 @@ Terminado los proyectos con el profe Ariel
 - Lo mismo parte 3
 Lo de atras fue todo Backend
 - Lo mismo parte 4 final Fronted
+
+El companero hizo un programa de lista de tareas, usando base de datos inteliji y muchas liberias de spring.
+Aun no me quedo claro.
+Es demaciado y aunque compartio todo el codigo no se si lo quiero realizar. Deberia hacer uno propio inspirado 
+Pero, el como preparo las liberias es confuso.
