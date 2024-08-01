@@ -1,2 +1,15 @@
 Clase 5. Parte 1
 El companero nos va a enceniar a hacer una lista de tareas. Al parecer desde el principio paso a paso como el profe Ariel
+
+Abreviaturas: 
+    PG (Postgres)
+    
+Todo la app se desplegla en railway, tendremos 3 servidores
+ - BD
+ - Backend
+ - Fronted
+
+Modulo jwt, sirve para identificar al usuario y las peticiones que se realicen
+TailWindCSS para crear las clases de CSS
+PERN : Postgres Express React Node
+
