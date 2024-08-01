@@ -10,6 +10,8 @@ Todo la app se desplegla/ conecta en el railway, tendremos 3 servidores
  - Fronted
 
 Modulo jwt, sirve para identificar al usuario y las peticiones que se realicen
-TailWindCSS para crear las clases de CSS
+TailWindCSS para crear las clases de CSS mas rapido
 PERN : Postgres Express React Node
 
+Video 3 Inicio del proyecto:
+ - Creacion de carpetas instalaciones, configuraciones basicas y commits
