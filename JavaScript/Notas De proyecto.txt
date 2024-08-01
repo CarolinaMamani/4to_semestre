@@ -15,3 +15,16 @@ PERN : Postgres Express React Node
 
 Video 3 Inicio del proyecto:
  - Creacion de carpetas instalaciones, configuraciones basicas y commits
+
+ 1. Instalamos un package Json. Usando la terminal escribiendo: npm init -y
+ 2. Instalamos los modulos o dependencias necesariarias para produccion
+    npm i express (es el framework de Backend para crear el servidor web)
+        cookie-parser (lee los cookies a travez de js)
+        cors (comunica el front y el back, permite una configuracion donde le front pueda pedir datos a la backend)
+        morgan (biblioteca permite ver las peticiones del front)
+        pg (driver de pg que permite la coneccion con Postgres y enviar las consultas sql al backend)
+        zod (biblioteca que permite realizar validaciones con backend)
+        md5 (biblioteca modulo, mediante el servicio grabatar (pide email e incrptacion con el md5) permite que genere una imagen al registro del usuario)
+        jasonwebtoken (permite generar un token a travez del backend, validaciones de comunicacion entre backend y fronted)
+        express-promise-router (forma para tener distintas rutas/paginas en el back para poder manejar los errores de manera mas facil)
+
