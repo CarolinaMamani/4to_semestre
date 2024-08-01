@@ -4,7 +4,7 @@ El companero nos va a enceniar a hacer una lista de tareas. Al parecer desde el 
 Abreviaturas: 
     PG (Postgres)
     
-Todo la app se desplegla en railway, tendremos 3 servidores
+Todo la app se desplegla/ conecta en el railway, tendremos 3 servidores
  - BD
  - Backend
  - Fronted
