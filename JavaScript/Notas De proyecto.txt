@@ -28,3 +28,7 @@ Video 3 Inicio del proyecto:
         jasonwebtoken (permite generar un token a travez del backend, validaciones de comunicacion entre backend y fronted)
         express-promise-router (forma para tener distintas rutas/paginas en el back para poder manejar los errores de manera mas facil)
 
+3. Instalamos dependencias de Desarrollo
+    npm i nodemon (scritp que permite reiniciar el codigo cada vez que realicemos un cambio)
+         eslint (ayuda a analizar el codigo y lanza advertencias para ayudarnos con la estructura del codigo)
+         -D (es para que no las instale como dependencias sino como DevDependencias)
