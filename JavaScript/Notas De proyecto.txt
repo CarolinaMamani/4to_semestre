@@ -45,3 +45,6 @@ controllers: a escribir la logica cuando llegamos a una ruta. /login la logica e
 db.js: para generar las consultas  y coneccion sql a la base de datos
 config.js: tendra las configuraciones de la app, usuario contrasena de la base de datos, direccion, puerto del servidos, token, llaves
 app.js: relacionado con el servidor, codigo del servidor. Es el archivo init a la app
+
+Ya terminamos de crear la estructura del backend
+
