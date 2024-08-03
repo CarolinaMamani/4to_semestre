@@ -48,3 +48,16 @@ app.js: relacionado con el servidor, codigo del servidor. Es el archivo init a l
 
 Ya terminamos de crear la estructura del backend
 
+Fuera del backend:
+
+carpeta:
+- database
+        es la base de datos.
+        archivo:
+        init.sql
+
+Iniciamos un repositorio para guardar los cambios:
+en la terminal:
+    git init (inicializamos el repositorio)
+    git status
+    
