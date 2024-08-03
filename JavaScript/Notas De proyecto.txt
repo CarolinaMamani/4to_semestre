@@ -60,4 +60,7 @@ Iniciamos un repositorio para guardar los cambios:
 en la terminal:
     git init (inicializamos el repositorio)
     git status
+    git add .
+    git commit -m "clase 6"
+
     
