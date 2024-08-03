@@ -32,3 +32,16 @@ Video 3 Inicio del proyecto:
     npm i nodemon (scritp que permite reiniciar el codigo cada vez que realicemos un cambio)
          eslint (ayuda a analizar el codigo y lanza advertencias para ayudarnos con la estructura del codigo)
          -D (es para que no las instale como dependencias sino como DevDependencias)
+
+
+
+Archivos creados:
+router: permite tener las rutas de nuestras api.
+middlewares: generamos funciones, archivos que tienen funciones que vamos a leer antes de llegar a las rutas
+libs : codigo que se puede reutilizar en otras partes de la app
+schemas: para validar datos que nos llegan al backend
+controllers: a escribir la logica cuando llegamos a una ruta. /login la logica en esa ruta estara aqui
+
+db.js: para generar las consultas  y coneccion sql a la base de datos
+config.js: tendra las configuraciones de la app, usuario contrasena de la base de datos, direccion, puerto del servidos, token, llaves
+app.js: relacionado con el servidor, codigo del servidor. Es el archivo init a la app
