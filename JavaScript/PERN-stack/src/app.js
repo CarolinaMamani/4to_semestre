@@ -9,11 +9,13 @@ app.use(morgan("dev")); //que la app use morgan. En la consola nos va a dar mens
 
 app.get("/", (req, res) => res.json({message: "Bienvenida :D"}));
 
+//creamos una ruta como prueba
+
 //http://localhost:3000/test
-app.get('/test',(req, res)=>  {
-    throw new Error('error generado por el usuario');
-    res.send('Ruta test')
-}); 
+//app.get('/test',(req, res)=>  {
+//    throw new Error('error customs');
+//    res.send('Ruta test')
+//}); 
 
 //manejador de errores
 app.use((err, req, res, next) => {
@@ -24,3 +26,4 @@ app.use((err, req, res, next) => {
 });
 
 export default app;
+
