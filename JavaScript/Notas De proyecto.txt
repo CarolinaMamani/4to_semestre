@@ -69,3 +69,9 @@ buscar donde esta cada archivo. Para ahorrar tiempo usamos:
     CTRL + P  archivobuscado
 
 Nos apareseran todos los archivos con el nombre que escribamos y las rutas
+
+
+------------------
+
+CRUD!
+
