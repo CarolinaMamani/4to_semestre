@@ -64,3 +64,8 @@ en la terminal:
     git commit -m "clase 6"
 
     
+TIP: al tener tantos archivos creando la app te vuelve tedioso y toma mucho tiempo
+buscar donde esta cada archivo. Para ahorrar tiempo usamos:
+    CTRL + P  archivobuscado
+
+Nos apareseran todos los archivos con el nombre que escribamos y las rutas
