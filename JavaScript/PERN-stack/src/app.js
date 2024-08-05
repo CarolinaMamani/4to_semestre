@@ -1,15 +1,17 @@
 import express from "express";
 import morgan from "morgan";
+import tareasRoutes from "./router/tareas.routes.js"
 
 const app = express();
 
 //Rutas:
-
+//Middlewares : comvierte los datos en objetos de javascript
 app.use(morgan("dev")); //que la app use morgan. En la consola nos va a dar mensajes de error mas cortos y limpios
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));//para formularios cortos
 
 app.get("/", (req, res) => res.json({message: "Bienvenida :D"}));
+app.use("/tareas", tareasRoutes);
 
 //creamos una ruta como prueba
 
