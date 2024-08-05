@@ -6,6 +6,8 @@ const app = express();
 //Rutas:
 
 app.use(morgan("dev")); //que la app use morgan. En la consola nos va a dar mensajes de error mas cortos y limpios
+app.use(express.json());
+app.use(express.urlencoded({ extended: false}));//para formularios cortos
 
 app.get("/", (req, res) => res.json({message: "Bienvenida :D"}));
 
