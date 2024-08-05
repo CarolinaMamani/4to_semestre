@@ -12,8 +12,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false}));//para formularios cortos
 
 app.get("/", (req, res) => res.json({message: "Bienvenida :D"}));
-app.use("/tareas", tareasRoutes);
-app.use(authRoutes);
+app.use('/api', tareasRoutes); //agregamos a los url el 'api'
+app.use('/api', authRoutes);
 //creamos una ruta como prueba
 
 //http://localhost:3000/test
