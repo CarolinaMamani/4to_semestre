@@ -1,6 +1,7 @@
 import express from "express";
 import morgan from "morgan";
-import tareasRoutes from "./router/tareas.routes.js"
+import tareasRoutes from "./router/tareas.routes.js";
+import authRoutes from "./router/auth.routes.js";
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.use(express.urlencoded({ extended: false}));//para formularios cortos
 
 app.get("/", (req, res) => res.json({message: "Bienvenida :D"}));
 app.use("/tareas", tareasRoutes);
-
+app.use(authRoutes);
 //creamos una ruta como prueba
 
 //http://localhost:3000/test
