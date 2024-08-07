@@ -9,5 +9,7 @@ const pool = new Pool({
 });
 
 pool.op("connect", () => {
-    console.log("conectango a la base de datos");
+    console.log("conectando a la base de datos");
 });
+
+
