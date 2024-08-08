@@ -11,10 +11,9 @@ export const crearTarea = async (req, res, next)=> {
     //para que no se caiga el servidos agregamos un try catch para el manejo de errores
 
     try{  
-        throw new Error('algo salio mal');
-        const {rows} = await pool.query('INSERT INTO tareas (titulo, descripcion) VALUES ($1, $2)', [titulo, descripcion]);
-        console.log(rows);
-        res.send('creando tarea');
+        
+        const result = await pool.query('INSERT INTO tareas (titulo, descripcion) VALUES ($1, $2) RETURNING *', [titulo, descripcion]);
+        res.json(result.rows[0]); //devuelve una lista
     } catch (error) {
         if (error.code === '23505'){
             return res.send('ya existe una tarea con ese titulo');
