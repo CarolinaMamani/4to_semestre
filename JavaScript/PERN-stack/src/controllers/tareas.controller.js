@@ -22,7 +22,9 @@ export const crearTarea = async (req, res, next)=> {
         console.log(result.rows[0]); //devuelve la lista en la consola terminal
     } catch (error) {
         if (error.code === '23505'){
-            return res.send('ya existe una tarea con ese titulo');
+            return res.status(400).json ({
+                message: 'ya existe una tarea con ese titulo'
+            });
         }
         console.log(error);
         next(error);
