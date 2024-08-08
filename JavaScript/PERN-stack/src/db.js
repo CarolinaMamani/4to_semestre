@@ -1,14 +1,13 @@
-import { Pool } from "pg";
-import { password, port } from "pg/lib/defaults";
+import pg from "pg";
 
-const pool = new Pool({
+export const pool = new pg.Pool({
     port: 5432,
     host: "localhost",
     user: "postgres",
     password: "admin",
 });
 
-pool.op("connect", () => {
+pool.on("connect", () => {
     console.log("conectando a la base de datos");
 });
 
