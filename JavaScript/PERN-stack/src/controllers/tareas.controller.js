@@ -1,16 +1,11 @@
 import { pool } from "../db.js";
 
-export const listarTareas =  async(req,res,next) => {
-    try { //siempre usamos try catch en todas las peticiones que hagamos para evitar errores que desconecten el servidor
+export const listarTareas =  async(req,res) => {
+   
         const resultado = await pool.query('SELECT * FROM tareas');
         console.log(resultado);
         return res.json(resultado.rows);
-    } catch (error) {
-        next(error);
-        
-    }
-    
-}
+    } 
 
 export const listarTarea = (req,res)=> res.send('obteniendo una tarea unica');
 
