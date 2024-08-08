@@ -13,7 +13,8 @@ export const crearTarea = async (req, res, next)=> {
     try{  
         
         const result = await pool.query('INSERT INTO tareas (titulo, descripcion) VALUES ($1, $2) RETURNING *', [titulo, descripcion]);
-        res.json(result.rows[0]); //devuelve una lista
+        res.json(result.rows[0]); //devuelve una lista en el json
+        console.log(result.rows[0]); //devuelve la lista en la consola terminal
     } catch (error) {
         if (error.code === '23505'){
             return res.send('ya existe una tarea con ese titulo');
