@@ -1,6 +1,10 @@
 import { pool } from "../db.js";
 
-export const listarTareas =  (req,res) => res.send('obteniendo tareas');
+export const listarTareas =  (req,res) => {
+    const resultado = pool.query('SELECT * FROM tareas');
+    console.log(resultado);
+    return res.json(resultado.rows);
+}
 
 export const listarTarea = (req,res)=> res.send('obteniendo una tarea unica');
 
