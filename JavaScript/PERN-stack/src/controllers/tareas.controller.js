@@ -7,7 +7,10 @@ export const listarTareas =  async(req,res) => {
         return res.json(resultado.rows);
     } 
 
-export const listarTarea = (req,res)=> res.send('obteniendo una tarea unica');
+export const listarTarea = async(req,res)=> {
+    const resultado = await pool.query('SELECT * FROM tareas WHERE id = $1', [req.params.id]);
+    return res.json(resultado.rows);
+};
 
 export const crearTarea = async (req, res, next)=> {
     //verificamos que este funcionando para el cliente
