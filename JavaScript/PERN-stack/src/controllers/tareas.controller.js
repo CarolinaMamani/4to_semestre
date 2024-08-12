@@ -9,7 +9,12 @@ export const listarTareas =  async(req,res) => {
 
 export const listarTarea = async(req,res)=> {
     const resultado = await pool.query('SELECT * FROM tareas WHERE id = $1', [req.params.id]);
-    return res.json(resultado.rows);
+    if (resultado.rowCount === 0){
+        return res.status(404).json({ //devuelve estado 404
+            message: 'La tarea no existe'
+        });
+    }
+    return res.json(resultado.rows[0]);
 };
 
 export const crearTarea = async (req, res, next)=> {
