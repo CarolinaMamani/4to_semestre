@@ -46,4 +46,7 @@ export const actualizarTarea = (req,res) => res.send('actualizando tarea unica')
 export const eliminarTarea = async (req,res)=> {
     const resultado = await pool.query('DELETE FROM tareas WHERE id =$1', [req.params.id]);
     console.log(resultado);
+
+    return res.send(`Tarea ${req.params.id} eliminada`);
 }
+
