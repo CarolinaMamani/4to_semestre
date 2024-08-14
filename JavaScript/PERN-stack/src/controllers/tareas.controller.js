@@ -41,10 +41,19 @@ export const crearTarea = async (req, res, next)=> {
 
 };
 
-export const actualizarTarea = (req,res) => {
+export const actualizarTarea = async (req,res) => {
     const {titulo, descripcion} = req.body;
     const id = req.params.id;
-    const result = await pool.query('UPDATE tareas SET titulo =$1, descripcion =$2 WHERE id =$3 RETURNING *', [titulo, descripcion, id]);
+    const result = await pool.query('UPDATE tareas SET titulo = $1, descripcion = $2 WHERE id = $3 RETURNING *', [titulo, descripcion, id]);
+    
+    if (result.rowCount === 0) {
+        return res.status(404).json({
+            message: 'no existe una tarea con ese id'
+        });
+        
+    }
+    return res.json(result.rows[0]);    
+    
 }
 
 export const eliminarTarea = async (req,res)=> {
