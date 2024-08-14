@@ -43,6 +43,8 @@ export const crearTarea = async (req, res, next)=> {
 
 export const actualizarTarea = (req,res) => {
     const {titulo, descripcion} = req.body;
+    const id = req.params.id;
+    const result = await pool.query('UPDATE tareas SET titulo =$1, descripcion =$2 WHERE id =$3 RETURNING *', [titulo, descripcion, id]);
 }
 
 export const eliminarTarea = async (req,res)=> {
