@@ -41,12 +41,20 @@ export const crearTarea = async (req, res, next)=> {
 
 };
 
-export const actualizarTarea = (req,res) => res.send('actualizando tarea unica');
+export const actualizarTarea = (req,res) => {
+    const {titulo, descripcion} = req.body;
+}
 
 export const eliminarTarea = async (req,res)=> {
     const resultado = await pool.query('DELETE FROM tareas WHERE id =$1', [req.params.id]);
-    console.log(resultado);
 
-    return res.send(`Tarea ${req.params.id} eliminada`);
+    if (resultado === 0) {
+        return res.status(404).json({
+            message: 'la tarea no existe'
+        });
+    }
+    return res.sendStatus(204);
+
+    
 }
 
