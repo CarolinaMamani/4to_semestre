@@ -6,8 +6,12 @@ export const signup = async(req,res) => {
     const {name, email, password} = req.body;
     res.send("Registrando");
 
+
+
     const result =  await pool.query("INSERT INTO usuarios (name, email, password) VALUES ($1, $2, $3)", [name, email, password])
     console.log(result);
+
+    return res.json(result.rows[0]);
 };
 
 export const signout = (req,res) => res.send('cerrando secion');
