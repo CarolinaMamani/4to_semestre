@@ -66,7 +66,7 @@ export const signout = (req,res) => {
     return res.json({message: 'sesion cerrada'});
 };
 
-export const profile = (req,res) => {
-    const result = pool.query("SELECT * FROM usuarios WHERE id = $1", [req.usuarioId]);
+export const profile = async (req,res) => {
+    const result = await pool.query("SELECT * FROM usuarios WHERE id = $1", [req.usuarioId]);
     return res.json(result.rows[0]);
 }
