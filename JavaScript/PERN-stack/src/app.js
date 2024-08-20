@@ -2,12 +2,14 @@ import express from "express";
 import morgan from "morgan";
 import tareasRoutes from "./router/tareas.routes.js";
 import authRoutes from "./router/auth.routes.js";
+import cookieParser from "cookie-parser";
 
 const app = express();
 
 //Rutas:
 //Middlewares : comvierte los datos en objetos de javascript
-app.use(morgan("dev")); //que la app use morgan. En la consola nos va a dar mensajes de error mas cortos y limpios
+app.use(morgan("dev"));
+app.use(cookieParser()); //que la app use morgan. En la consola nos va a dar mensajes de error mas cortos y limpios
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));//para formularios cortos
 
