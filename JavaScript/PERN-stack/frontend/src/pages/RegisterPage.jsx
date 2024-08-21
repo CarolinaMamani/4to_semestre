@@ -3,27 +3,20 @@ import { Card } from "../componentes/ui/Card";
 import { Button } from "../componentes/ui/Button";
 //import { Button, Card, Input } from "../componentes/ui";
 import { useForm }from 'react-hook-form';
+import axios from "axios"
 
 
 function RegisterPage() {
 
   const { register, handleSubmit, formState:{errors}} = useForm();
-  const onSubmit = handleSubmit(async(data) => {
-    console.log(data);
-    const response = await fetch("http://localhost:3000/api/signup", {
-      credentials: "include",
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
 
-      }
-    });
-    const json = await response.json();
-    console.log(json);
+  const onSubmit = handleSubmit(async(data) => {
+      const res = await axios.post("http://localhost:3000/api/signup", data , {
+        withCredentials: true,
+      });
+        console.log(res);
   });
 
-  console.log(errors)
 
   return (
     <div className="h-[calc(100vh-64px)] flex items-center justify-center">

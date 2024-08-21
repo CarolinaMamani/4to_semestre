@@ -10,7 +10,7 @@ const app = express();
 //Rutas:
 //Middlewares : comvierte los datos en objetos de javascript
 app.use(morgan("dev"));
-app.use(cors(
+app.use(cors( //importante esta parte para permitir el acceso al backend
     {
         origin: "http://localhost:5173",
         credentials: true
