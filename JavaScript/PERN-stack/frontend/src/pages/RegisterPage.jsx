@@ -1,6 +1,5 @@
-import Input from '../componentes/ui/input';
-import { Card } from "../componentes/ui/Card";
-import { Button } from "../componentes/ui/Button";
+
+import { Button, Card, Input } from "../componentes/ui";
 
 function RegisterPage() {
   return (
