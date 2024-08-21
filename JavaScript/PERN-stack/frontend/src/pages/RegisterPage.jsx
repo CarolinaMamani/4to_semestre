@@ -2,7 +2,7 @@ import React from 'react'
 
 function RegisterPage() {
   return (
-    <div>RegisterPage</div>
+    <h3 className='text-2xl font-bold text-yellow-200'>Registroo</h3>
   )
 }
 
