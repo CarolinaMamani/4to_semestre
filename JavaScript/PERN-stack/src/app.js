@@ -3,12 +3,19 @@ import morgan from "morgan";
 import tareasRoutes from "./router/tareas.routes.js";
 import authRoutes from "./router/auth.routes.js";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 const app = express();
 
 //Rutas:
 //Middlewares : comvierte los datos en objetos de javascript
 app.use(morgan("dev"));
+app.use(cors(
+    {
+        origin: "http://localhost:5173",
+        credentials: true
+    }
+));
 app.use(cookieParser()); //que la app use morgan. En la consola nos va a dar mensajes de error mas cortos y limpios
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));//para formularios cortos

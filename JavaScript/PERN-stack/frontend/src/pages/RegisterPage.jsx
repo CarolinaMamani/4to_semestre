@@ -8,8 +8,19 @@ import { useForm }from 'react-hook-form';
 function RegisterPage() {
 
   const { register, handleSubmit, formState:{errors}} = useForm();
-  const onSubmit = handleSubmit((data) => {
+  const onSubmit = handleSubmit(async(data) => {
     console.log(data);
+    const response = await fetch("http://localhost:3000/api/signup", {
+      credentials: "include",
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+
+      }
+    });
+    const json = await response.json();
+    console.log(json);
   });
 
   console.log(errors)
