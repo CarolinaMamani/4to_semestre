@@ -1,4 +1,5 @@
-import {Card, Input, Button} from "../componentes/ui"
+import {Link} from "react-router-dom"
+import {Card, Input, Button, Label} from "../componentes/ui"
 
 function LoginPage() {
   return (
@@ -8,9 +9,14 @@ function LoginPage() {
         <form>
           <Label htmlFor="email">Email</Label>
           <Input placeholder = "Ingrese su email"></Input>
+          <Label htmlFor="password">Contrasenia</Label>
           <Input placeholder = "Ingrese su contrasenia"></Input>
           <Button>Ingresar</Button>
         </form>
+        <div className="flex justify-between my-4">
+          <p>No tienes una cuenta?</p>
+          <Link to="/register">Registrate</Link>
+        </div>
       </Card>
 
     </div>
