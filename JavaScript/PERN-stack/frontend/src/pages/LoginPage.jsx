@@ -6,6 +6,7 @@ function LoginPage() {
       <Card>
         <h1 className="text4x1 font-bold my-2 text-center">Iniciar sesion</h1>
         <form>
+          <Label htmlFor="email">Email</Label>
           <Input placeholder = "Ingrese su email"></Input>
           <Input placeholder = "Ingrese su contrasenia"></Input>
           <Button>Ingresar</Button>
