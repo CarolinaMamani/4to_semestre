@@ -21,7 +21,7 @@ export const signin = async(req,res) => {
         console.log(result);
         //creamos una cookie 
         res.cookie('token', token, {
-            httpOnly: true,
+            //httpOnly: true,
             secure: true,
             sameSite: "none",
             maxAge: 60 * 60 *24 * 1000, //1 dia
