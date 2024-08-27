@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react"
 
 export const AuthContext = createContext();
+
 export const useAuth = () => {
     const context =  useContext(AuthContext);
     if (!context){
@@ -17,7 +18,7 @@ export function AuthProvider ({children}){
 
     const signup = async (data) => {
         const res = await axios.post("http://localhost:3000/api/signup", data, {
-            whitCredentials: true,
+            withCredentials: true,
         });
         console.log(res);
     }
@@ -27,6 +28,7 @@ export function AuthProvider ({children}){
         user,
         isAuth,
         errors,
+        signup,
     }}>
         {children}
     </AuthContext.Provider>
