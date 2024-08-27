@@ -5,18 +5,18 @@ import { Label } from '../componentes/ui/Label';
 import { Link } from 'react-router-dom';
 //import { Button, Card, Input } from "../componentes/ui";
 import { useForm }from 'react-hook-form';
-import axios from "axios"
+
+import {useAuth} from "../context/AuthContext"
 
 //hay fallas al enviar el registro
 function RegisterPage() {
 
   const { register, handleSubmit, formState:{errors}} = useForm();
 
+  const {signup} = useAuth();
+
   const onSubmit = handleSubmit(async(data) => {
-      const res = await axios.post("http://localhost:3000/api/signup", data , {
-        withCredentials: true,
-      });
-        console.log(res);
+      await signup(data);
   });
 
 
