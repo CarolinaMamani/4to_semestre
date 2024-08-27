@@ -15,6 +15,13 @@ export function AuthProvider ({children}){
     const [isAuth, setIsAuth] = useState(false);
     const [errors, setErrors] = useState(null);
 
+    const signup = async (data) => {
+        const res = await axios.post("http://localhost:3000/api/signup", data, {
+            whitCredentials: true,
+        });
+        console.log(res);
+    }
+
     
     return <AuthContext.Provider value={{
         user,
