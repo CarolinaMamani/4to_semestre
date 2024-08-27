@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react"
+import axios from "axios"
 
 export const AuthContext = createContext();
 
@@ -20,7 +21,7 @@ export function AuthProvider ({children}){
         const res = await axios.post("http://localhost:3000/api/signup", data, {
             withCredentials: true,
         });
-        console.log(res);
+            console.log(res);
     }
 
     

@@ -2,7 +2,7 @@ import Input from '../componentes/ui/input';
 import { Card } from "../componentes/ui/Card";
 import { Button } from "../componentes/ui/Button";
 import { Label } from '../componentes/ui/Label';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 //import { Button, Card, Input } from "../componentes/ui";
 import { useForm }from 'react-hook-form';
 
