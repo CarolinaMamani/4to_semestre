@@ -1,6 +1,8 @@
 import Router from "express-promise-router";
 import { actualizarTarea, crearTarea, eliminarTarea, listarTarea, listarTareas } from "../controllers/tareas.controller.js";
 import {isAuth} from "../middlewares/auth.middlewere.js"
+import { validateSchema } from "../middlewares/validate.middlewere.js";
+import { createTareasSchema } from "../schemas/tareas.schema.js";
 
 const router = Router();
 
@@ -12,7 +14,7 @@ router.get('/tareas', isAuth, listarTareas); //cambiamos las funciones al achivo
 router.get('/tareas/:id', listarTarea);
 
 //creando una tarea
-router.post('/tareas', crearTarea);
+router.post('/tareas', validateSchema(createTareasSchema), crearTarea);
 
 //actualizamos una tarea
 router.put('/tareas/:id', actualizarTarea);
