@@ -22,7 +22,7 @@ export const signin = async(req,res) => {
         //creamos una cookie 
         res.cookie('token', token, {
             //httpOnly: true,
-            secure: true,
+            //secure: true,
             sameSite: "none",
             maxAge: 60 * 60 *24 * 1000, //1 dia
         })
@@ -44,7 +44,7 @@ export const signup = async(req,res, next) => {
         //creamos una cookie 
         res.cookie('token', token, {
             //httpOnly: true,
-            secure: true,
+            //secure: true,
             sameSite: "none",
             maxAge: 60 * 60 *24 * 1000, //1 dia
         })
