@@ -14,9 +14,10 @@ function RegisterPage() {
   const { register, handleSubmit, formState:{errors}} = useForm();
 
   const {signup} = useAuth();
-
+  const navigate = useNavigate();
   const onSubmit = handleSubmit(async(data) => {
       await signup(data);
+      navigate("/perfil");
   });
 
 
