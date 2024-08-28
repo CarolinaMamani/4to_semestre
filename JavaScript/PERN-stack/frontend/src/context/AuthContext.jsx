@@ -40,6 +40,8 @@ export function AuthProvider ({children}){
         errors,
         signup,
         setUser,
+        signin,
+        
     }}>
         {children}
     </AuthContext.Provider>
