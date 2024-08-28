@@ -22,6 +22,7 @@ export function AuthProvider ({children}){
             withCredentials: true,
         });
             console.log(res);
+            setUser(res.data);
     }
 
     
@@ -30,6 +31,7 @@ export function AuthProvider ({children}){
         isAuth,
         errors,
         signup,
+        setUser,
     }}>
         {children}
     </AuthContext.Provider>
