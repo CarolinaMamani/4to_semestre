@@ -17,7 +17,7 @@ router.get('/tareas/:id', listarTarea);
 router.post('/tareas', validateSchema(createTareasSchema), crearTarea);
 
 //actualizamos una tarea
-router.put('/tareas/:id', actualizarTarea(updateTareasSchema), actualizarTarea);
+router.put('/tareas/:id', validateSchema(updateTareasSchema), actualizarTarea);
 
 //eliminamos uan tarea
 router.delete('/tareas/:id', isAuth, eliminarTarea);
