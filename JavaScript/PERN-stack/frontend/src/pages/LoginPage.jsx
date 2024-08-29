@@ -11,7 +11,7 @@ function LoginPage() {
   const navigate = useNavigate();
   const onSubmit = handleSubmit(async(data) => {
       await signin(data);
-      navigate("/perfil");
+      //navigate("/perfil");
   });
 
 
