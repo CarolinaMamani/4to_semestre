@@ -7,9 +7,9 @@ import { signinSchema, signupSchema } from "../schemas/auth.schema.js";
 const router = Router();
 //Inicios de secion
 
-router.post('/signin', validateSchema(signin),signin);
+router.post('/signin', validateSchema(signinSchema),signin);
 
-router.post('/signup', validateSchema(signup), signup);
+router.post('/signup', validateSchema(signupSchema), signup);
 
 router.post('/signout', signout); //sera con validacion de tokens
 
