@@ -2,7 +2,7 @@ import Router from "express-promise-router";
 import { actualizarTarea, crearTarea, eliminarTarea, listarTarea, listarTareas } from "../controllers/tareas.controller.js";
 import {isAuth} from "../middlewares/auth.middlewere.js"
 import { validateSchema } from "../middlewares/validate.middlewere.js";
-import { createTareasSchema } from "../schemas/tareas.schema.js";
+import { createTareasSchema, updateTareasSchema } from "../schemas/tareas.schema.js";
 
 const router = Router();
 
@@ -17,9 +17,9 @@ router.get('/tareas/:id', listarTarea);
 router.post('/tareas', validateSchema(createTareasSchema), crearTarea);
 
 //actualizamos una tarea
-router.put('/tareas/:id', actualizarTarea);
+router.put('/tareas/:id', actualizarTarea(updateTareasSchema), actualizarTarea);
 
 //eliminamos uan tarea
-router.delete('/tareas/:id', eliminarTarea);
+router.delete('/tareas/:id', isAuth, eliminarTarea);
 
 export default router;
