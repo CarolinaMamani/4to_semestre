@@ -11,13 +11,13 @@ router.get('/tareas', isAuth, listarTareas); //cambiamos las funciones al achivo
 //tareas.controller.js
 
 //una unica terea
-router.get('/tareas/:id', listarTarea);
+router.get('/tareas/:id', isAuth, listarTarea);
 
 //creando una tarea
-router.post('/tareas', validateSchema(createTareasSchema), crearTarea);
+router.post('/tareas', isAuth, validateSchema(createTareasSchema), crearTarea);
 
 //actualizamos una tarea
-router.put('/tareas/:id', validateSchema(updateTareasSchema), actualizarTarea);
+router.put('/tareas/:id', isAuth, validateSchema(updateTareasSchema), actualizarTarea);
 
 //eliminamos uan tarea
 router.delete('/tareas/:id', isAuth, eliminarTarea);
