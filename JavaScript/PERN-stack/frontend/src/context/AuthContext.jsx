@@ -24,9 +24,13 @@ export function AuthProvider ({children}){
             });
                 console.log(res.data);
                 setUser(res.data);
+                
         } catch (error) {
             console.log(error)
-            setErrors(error)
+            if(Array.isArray(error.response.data)){
+                return setErrors(error.response.data)
+            }
+            setErrors([error.response.data.message])
         }
     };
 

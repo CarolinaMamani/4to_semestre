@@ -1,17 +1,18 @@
-import  Router  from "express-promise-router";
-import { signin, signup, signout, profile } from "../controllers/auth.controller.js";
-import {isAuth} from "../middlewares/auth.middleware.js"
-import {validateSchema} from "../middlewares/validate.middleware.js"
-import {signupSchema, signinSchema} from "../schemas/auth.schema.js"
+import Router from "express-promise-router";
+import { profile, signin, signout, signup } from "../controllers/auth.controller.js";
+import { isAuth } from "../middlewares/auth.middlewere.js";
+import { validateSchema } from "../middlewares/validate.middlewere.js";
+import { signinSchema, signupSchema } from "../schemas/auth.schema.js";
 
 const router = Router();
+//Inicios de secion
 
-router.post("/signin", validateSchema(signinSchema),signin );
+router.post('/signin', validateSchema(signinSchema),signin);
 
-router.post("/signup",validateSchema(signupSchema), signup);
+router.post('/signup', validateSchema(signupSchema), signup);
 
-router.post("/signout", signout );
+router.post('/signout', signout); //sera con validacion de tokens
 
-router.get("/profile",isAuth, profile);
+router.get('/profile', isAuth, profile);
 
 export default router;
