@@ -18,11 +18,16 @@ export function AuthProvider ({children}){
     const [errors, setErrors] = useState(null);
 
     const signin = async(data) => {
-        const res = await axios.post("http://localhost:3000/api/signin", data, {
-            withCredentials: true,
-        });
-            console.log(res.data);
-            setUser(res.data);
+        try {
+            const res = await axios.post("http://localhost:3000/api/signin", data, {
+                withCredentials: true,
+            });
+                console.log(res.data);
+                setUser(res.data);
+        } catch (error) {
+            console.log(error)
+            setErrors(error)
+        }
     };
 
     const signup = async (data) => {
