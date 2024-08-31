@@ -18,11 +18,13 @@ function LoginPage() {
   return (
     <div className="h-[calc(100vh-64px)] flex items-center justify-center">
       <Card>
-        {
-          errors && errors.map((error) => {
-            <p className="text-red-500 text-center mb-2">{error}</p>
-          })
+        {errors && 
+          errors.map((error, index) => (
+             <p key={index} className="bg-red-500 text-white p-2">{error}</p>
+          ))
         }
+
+
         <h1 className="text-4xl font-bold my-2 text-center">Iniciar sesion</h1>
         <form onSubmit={onSubmit}>
 
