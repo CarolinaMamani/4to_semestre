@@ -1,7 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react"
 import Cookie from 'js-cookie'
-import axios from "axios"
-import cliente from "../api/axios";
+import axios from "../api/axios";
 
 export const AuthContext = createContext();
 
@@ -57,8 +56,8 @@ export function AuthProvider ({children}){
                 setUser(res.data);
                 setIsAuth(true);
             }).catch((error) => {
-                setUser(null);
-                setIsAuth(false);
+                //setUser(null);
+                //setIsAuth(false);
                 console.log(error);
             })
 
