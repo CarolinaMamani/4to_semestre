@@ -51,13 +51,13 @@ export function AuthProvider ({children}){
     };
 
     useEffect(() => {
-        if(Cookie.get('token')){
+        if(Cookie.get("token")){
             axios.get("/profile").then((res) => {
                 setUser(res.data);
                 setIsAuth(true);
             }).catch((error) => {
-                //setUser(null);
-                //setIsAuth(false);
+                setUser(null);
+                setIsAuth(false);
                 console.log(error);
             })
 
