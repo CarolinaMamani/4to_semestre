@@ -4,7 +4,7 @@ import { Button } from "../componentes/ui/Button";
 import { Label } from '../componentes/ui/Label';
 import { Link, useNavigate } from 'react-router-dom';
 //import { Button, Card, Input } from "../componentes/ui";
-import { useForm }from 'react-hook-form';
+import { set, useForm }from 'react-hook-form';
 
 import {useAuth} from "../context/AuthContext"
 
@@ -13,11 +13,13 @@ function RegisterPage() {
 
   const { register, handleSubmit, formState:{errors}} = useForm();
 
-  const {signup} = useAuth();
+  const {signup, errors: setUserErrors } = useAuth();
   const navigate = useNavigate();
   const onSubmit = handleSubmit(async(data) => {
-      await signup(data);
+     const user =  await signup(data);
+     if(user){
       navigate("/perfil");
+     }
   });
 
 
@@ -25,6 +27,11 @@ function RegisterPage() {
     <div className="h-[calc(100vh-64px)] flex items-center justify-center">
       
       <Card>
+        {setUserErrors &&
+          setUserErrors.map((error, index) => (
+            <p key={index} className="bg-red-500 text-white p-2">{error}</p>
+         ))
+        }
         <h3 className='text-4xl font-bold text-blue-400 my-2'>Registro</h3>
         <form onSubmit={onSubmit}>
           <Label htmlFor="name">Nombre</Label>
