@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState, useEffect } from "react"
+import Cookie from 'js-cookie'
 import axios from "axios"
 
 export const AuthContext = createContext();
@@ -53,6 +54,9 @@ export function AuthProvider ({children}){
         }
     };
 
+    useEffect{() => {
+        console.log(Cookie.get())
+    }, []};
     
     return <AuthContext.Provider value={{
         user,
