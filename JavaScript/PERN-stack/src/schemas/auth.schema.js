@@ -26,14 +26,7 @@ export const signupSchema = z.object({
 });
 
 export const signinSchema = z.object({
-    name: z.string({
-        required_error: "El nombre es requerido",
-        invalid_type_error: "El nombre debe ser un string",
-    }).min(1,{
-        message: "El nombre debe tener al menos 1 caracter",
-    }).max(255,{
-        message: "El nombre debe tener como maximo 255 caracteres",
-    }),
+    
     email:z.string({
         required_error: "El email es requerido",
         invalid_type_error: "El email debe ser un string",
