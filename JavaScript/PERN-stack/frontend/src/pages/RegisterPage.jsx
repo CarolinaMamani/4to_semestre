@@ -4,7 +4,7 @@ import { Button } from "../componentes/ui/Button";
 import { Label } from '../componentes/ui/Label';
 import { Link, useNavigate } from 'react-router-dom';
 //import { Button, Card, Input } from "../componentes/ui";
-import { set, useForm }from 'react-hook-form';
+import {useForm }from 'react-hook-form';
 
 import {useAuth} from "../context/AuthContext"
 

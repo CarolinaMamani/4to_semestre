@@ -54,9 +54,19 @@ export function AuthProvider ({children}){
         }
     };
 
-    useEffect{() => {
-        console.log(Cookie.get())
-    }, []};
+    useEffect(() => {
+        if(Cookie.get('token')){
+            axios.get("http://localhost:3000/api/profile", {
+                withCredentials: true,
+            }).then((res) => {
+                setUser(res.data);
+                setIsAuth(true);
+            }).catch((error) => {
+                console.log(error);
+            })
+
+        }
+    }, []);
     
     return <AuthContext.Provider value={{
         user,
