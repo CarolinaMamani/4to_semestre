@@ -24,7 +24,9 @@ export function AuthProvider ({children}){
             });
                 console.log(res.data);
                 setUser(res.data);
-                
+                setIsAuth(true);
+            return res.data;
+
         } catch (error) {
             console.log(error)
             if(Array.isArray(error.response.data)){

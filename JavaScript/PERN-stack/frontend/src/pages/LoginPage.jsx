@@ -10,8 +10,11 @@ function LoginPage() {
   const {signin, errors} = useAuth();
   const navigate = useNavigate();
   const onSubmit = handleSubmit(async(data) => {
-      await signin(data);
-      //navigate("/perfil");
+      const user = await signin(data);
+      if(user){
+        navigate("/perfil");
+      }
+      
   });
 
 
