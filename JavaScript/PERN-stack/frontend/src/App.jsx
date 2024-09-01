@@ -13,7 +13,7 @@ function App(){
   return (
     //creamos diferentes rutas
     <>
-    <Navbar>
+    <Navbar/>
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/about" element ={<AboutPage/>} />
@@ -26,7 +26,7 @@ function App(){
         
           
       </Routes>
-    </Navbar>
+    
     </>
   )
 }
