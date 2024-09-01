@@ -6,11 +6,11 @@ const navigation = [
         path:"/"
     },
     {
-        name: "About"
+        name: "About",
         path:"/about"
     },
     {
-        name:"Login"
+        name:"Login",
         path: "/login"
     },
     { 
@@ -46,7 +46,14 @@ function Navbar() {
         </h1>
         <ul>
             <li>
+                {
+                    navigation.map(({name, path}) => (
+                        <li key={name}>
+                            <Link to={path}>{name}</Link>
+                        </li>
 
+                    ))
+                }
             </li>
         </ul>
     </nav>
