@@ -19,8 +19,24 @@ const navigation = [
     },
     { 
         name: "Perfil",
-        path:"/"
+        path:"/perfil"
     },
+    { 
+        name: "Tareas",
+        path:"/tareas"
+    },
+    { 
+        name: "Tareas/crear",
+        path:"/tareas/crear"
+    },
+    { 
+        name: "Tareas/editar/:id",
+        path:"/tareas/editar/:id"
+    },
+    { 
+        name: "*",
+        path:"*"
+    }
 ]
 function Navbar() {
   return (
