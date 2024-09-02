@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import {useForm }from 'react-hook-form';
 
 import {useAuth} from "../context/AuthContext"
+import { Container } from '../componentes/ui';
 
 //hay fallas al enviar el registro
 function RegisterPage() {
@@ -24,7 +25,7 @@ function RegisterPage() {
 
 
   return (
-    <div className="h-[calc(100vh-10rem)] flex items-center justify-center">
+    <Container className="h-[calc(100vh-10rem)] flex items-center justify-center">
       
       <Card>
         {setUserErrors &&
@@ -61,7 +62,7 @@ function RegisterPage() {
           <Link to="/login"> Iniciar Sesion</Link>
         </div>
       </Card>
-    </div>
+    </Container>
   );
 }
 
