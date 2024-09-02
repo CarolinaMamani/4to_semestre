@@ -8,13 +8,15 @@ import ProfilePage from './pages/ProfilePage'
 import TareasPage from './pages/TareasPage'
 import NotFound from "./pages/NotFound"
 import Navbar from "./componentes/navbar/Navbar"
+import { Container } from "./componentes/ui/Container"
 
 function App(){
   return (
     //creamos diferentes rutas
     <>
     <Navbar/>
-      <Routes>
+    <Container>
+    <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/about" element ={<AboutPage/>} />
         <Route path="/login" element={<LoginPage/>}/> 
@@ -26,6 +28,7 @@ function App(){
         
           
       </Routes>
+    </Container>
     
     </>
   )
