@@ -8,7 +8,9 @@ function Navbar() {
   return (
     <nav className="bg-zinc-950 ">
         <Container className="flex justify-between items-cente py-5">
-            <h1> PROYECT PERN </h1>
+            <Link to="/">
+            <h1 className="text-2xl font-bold text-sky-500"> PROYECTO PERN </h1>
+            </Link>
             <ul className="flex gap-x-2">
                 
                     {
