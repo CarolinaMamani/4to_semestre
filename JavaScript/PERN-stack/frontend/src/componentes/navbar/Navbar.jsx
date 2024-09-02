@@ -16,7 +16,7 @@ function Navbar() {
                     {
                         navigation.map(({name, path}) => (
                             <li key={name} className={
-                                `text-slate-300 ${location.pathname === path && "bg-sky-800 px-3 py-1"}`
+                                `text-slate-300 ${ location.pathname === path ? "bg-sky-800 px-3 py-1": "hover:bg-sky-400"}`
                             }>
                                 <Link to={path}>{name}</Link>
                             </li>
