@@ -18,7 +18,7 @@ function App(){
     //creamos diferentes rutas
     <>
     <Navbar/>
-    <Container>
+    <Container className="py-5">
     <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/about" element ={<AboutPage/>} />

@@ -15,10 +15,7 @@ export const navigation = [
         name: "Regristro",
         path:"/register"
     },
-    { 
-        name: "Perfil",
-        path:"/perfil"
-    },
+   
     { 
         name: "Tareas",
         path:"/tareas"
@@ -30,6 +27,11 @@ export const navigation = [
     { 
         name: "Editar tarea",
         path:"/tareas/editar/:id"
+    },
+       
+    { 
+        name: "Perfil",
+        path:"/perfil"
     }
     
 ]

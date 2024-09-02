@@ -7,10 +7,8 @@ function Navbar() {
     console.log(location);
   return (
     <nav className="bg-zinc-950 ">
-        <Container className="flex justify-between items-center">
-            <h1>
-                PROYECT PERN
-            </h1>
+        <Container className="flex justify-between items-cente py-5">
+            <h1> PROYECT PERN </h1>
             <ul className="flex gap-x-2">
                 
                     {
