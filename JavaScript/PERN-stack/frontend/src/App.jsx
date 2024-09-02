@@ -1,4 +1,8 @@
+import Navbar from "./componentes/navbar/Navbar"
+import { Container } from "./componentes/ui/Container"
+
 import { Routes, Route } from "react-router-dom"
+
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import LoginPage from './pages/LoginPage'
@@ -7,8 +11,7 @@ import RegisterPage from './pages/RegisterPage'
 import ProfilePage from './pages/ProfilePage'
 import TareasPage from './pages/TareasPage'
 import NotFound from "./pages/NotFound"
-import Navbar from "./componentes/navbar/Navbar"
-import { Container } from "./componentes/ui/Container"
+
 
 function App(){
   return (
