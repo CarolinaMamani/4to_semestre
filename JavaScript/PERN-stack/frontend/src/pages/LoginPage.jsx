@@ -6,7 +6,7 @@ import { useAuth } from "../context/AuthContext";
 
 
 function LoginPage() {
-  const { register, handleSubmit, formState} = useForm();
+  const { register, handleSubmit} = useForm();
   const {signin, errors} = useAuth();
   const navigate = useNavigate();
   const onSubmit = handleSubmit(async(data) => {
@@ -52,7 +52,7 @@ function LoginPage() {
           <Button>Ingresar</Button>
         </form>
         <div className="flex justify-between my-4">
-          <p>No tienes una cuenta?</p>
+          <p className="mr-4">No tienes una cuenta?</p>
           <Link to="/register">Registrate</Link>
         </div>
       </Card>
