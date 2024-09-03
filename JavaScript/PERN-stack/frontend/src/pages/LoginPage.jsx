@@ -6,13 +6,13 @@ import { useAuth } from "../context/AuthContext";
 
 
 function LoginPage() {
-  const { register, handleSubmit} = useForm();
+  const { register, handleSubmit, formState} = useForm();
   const {signin, errors} = useAuth();
   const navigate = useNavigate();
   const onSubmit = handleSubmit(async(data) => {
       const user = await signin(data);
       if(user){
-        navigate("/perfil");
+        navigate("/tareas");
       }
       
   });
