@@ -12,7 +12,7 @@ function LoginPage() {
   const onSubmit = handleSubmit(async(data) => {
       const user = await signin(data);
       if(user){
-        navigate("/tareas");
+        navigate("/perfil");
       }
       
   });

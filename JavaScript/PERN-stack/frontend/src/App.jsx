@@ -33,7 +33,7 @@ function App(){
         <Route path="/register" element={<RegisterPage/>}/>
       
         
-         <Route element= {<ProtectedRoute/>}>
+         <Route element= {<ProtectedRoute isAllowed={isAuth} />}>
             <Route path="/perfil" element={<ProfilePage/>}/>
             <Route path="/tareas" element={<TareasPage/>}/>
             <Route path="/tareas/crear" element={<TareaFormPage/>}/>
