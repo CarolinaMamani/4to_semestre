@@ -21,16 +21,16 @@ export function AuthProvider ({children}){
     const signin = async(data) => {
         try {
             const res = await axios.post("/signin", data);                
-                setUser(res.data);
-                setIsAuth(true);
-            return res.data;
+        setUser(res.data);
+        setIsAuth(true);
+        return res.data;
 
         } catch (error) {
-            console.log(error)
-            if(Array.isArray(error.response.data)){
-                return setErrors(error.response.data)
-            }
-            setErrors([error.response.data.message])
+        console.log(error);
+        if(Array.isArray(error.response.data)){
+            return setErrors(error.response.data);
+        }
+        setErrors([error.response.data.message])
         }
     };
 
@@ -64,7 +64,8 @@ export function AuthProvider ({children}){
         }
     }, []);
     
-    return <AuthContext.Provider value={{
+    return (
+    <AuthContext.Provider value={{
         user,
         isAuth,
         errors,
@@ -75,4 +76,5 @@ export function AuthProvider ({children}){
     }}>
         {children}
     </AuthContext.Provider>
+    );
 }
