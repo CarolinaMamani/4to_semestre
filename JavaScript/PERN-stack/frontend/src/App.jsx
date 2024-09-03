@@ -1,6 +1,7 @@
 import Navbar from "./componentes/navbar/Navbar"
 import { Container } from "./componentes/ui/Container"
 import { ProtectedRoute } from "./componentes/ProtectedRoute"
+import { useAuth } from "./context/AuthContext"
 
 import { Routes, Route } from "react-router-dom"
 
@@ -15,6 +16,10 @@ import NotFound from "./pages/NotFound"
 
 
 function App(){
+
+  const {isAuth} = useAuth();
+  console.log(isAuth);
+
   return (
     //creamos diferentes rutas
     <>
@@ -28,11 +33,12 @@ function App(){
         <Route path="/register" element={<RegisterPage/>}/>
       
         
-         <Routes>
+         <Route element= {<ProtectedRoute/>}>
             <Route path="/perfil" element={<ProfilePage/>}/>
             <Route path="/tareas" element={<TareasPage/>}/>
+            <Route path="/tareas/crear" element={<TareaFormPage/>}/>
             <Route path="/tareas/editar/:id" element={<TareaFormPage/>}/>
-         </Routes> 
+         </Route> 
 
 
          <Route path="*" element={<NotFound/>}/>

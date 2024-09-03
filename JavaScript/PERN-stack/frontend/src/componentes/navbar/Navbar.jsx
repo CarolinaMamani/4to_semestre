@@ -4,7 +4,7 @@ import { Container } from "../ui/Container";
 
 function Navbar() {
     const location = useLocation();
-    console.log(location);
+    
   return (
     <nav className="bg-zinc-950 ">
         <Container className="flex justify-between items-cente py-5">
