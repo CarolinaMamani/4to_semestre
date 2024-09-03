@@ -1,5 +1,6 @@
 import Navbar from "./componentes/navbar/Navbar"
 import { Container } from "./componentes/ui/Container"
+import { ProtectedRoute } from "./componentes/ProtectedRoute"
 
 import { Routes, Route } from "react-router-dom"
 
@@ -25,14 +26,19 @@ function App(){
         <Route path="/about" element ={<AboutPage/>} />
         <Route path="/login" element={<LoginPage/>}/> 
         <Route path="/register" element={<RegisterPage/>}/>
-
-        <Route path="/perfil" element={<ProfilePage/>}/>
-        <Route path="/tareas" element={<TareasPage/>}/>
-        <Route path="/tareas/editar/:id" element={<TareaFormPage/>}/>
-        <Route path="*" element={<NotFound/>}/>
+      
         
-          
+         <Routes>
+            <Route path="/perfil" element={<ProfilePage/>}/>
+            <Route path="/tareas" element={<TareasPage/>}/>
+            <Route path="/tareas/editar/:id" element={<TareaFormPage/>}/>
+         </Routes> 
+
+
+         <Route path="*" element={<NotFound/>}/>
+
       </Routes>
+      
     </Container>
     
     </>
