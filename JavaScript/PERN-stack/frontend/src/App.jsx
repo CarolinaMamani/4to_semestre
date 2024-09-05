@@ -26,11 +26,13 @@ function App(){
     <Navbar/>
     <Container className="py-5">
     <Routes>
-      
+      <Route element= {<ProtectedRoute isAllowed={!isAuth}/>}>
         <Route path="/" element={<HomePage/>} />
         <Route path="/about" element ={<AboutPage/>} />
         <Route path="/login" element={<LoginPage/>}/> 
         <Route path="/register" element={<RegisterPage/>}/>
+      </Route>
+        
       
         
          <Route element= {<ProtectedRoute isAllowed={isAuth} />}>
